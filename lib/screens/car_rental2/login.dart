@@ -13,14 +13,17 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
-    double widget = MediaQuery.of(context).size.width;
+    double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
         automaticallyImplyLeading: false,
-        title: MyAppBar(isImage:false),
+        title: MyAppBar(
+          isImage: false,
+          isBack: false,
+        ),
       ),
       body: Container(
         child: Column(
@@ -29,75 +32,82 @@ class _LoginState extends State<Login> {
             SizedBox(
               height: 10.0,
             ),
-            Text(
-              'Enter your phone \nnumber',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                  color: Color.fromRGBO(255, 255, 255, 1),
-                  fontFamily: 'Gotham',
-                  fontSize: 30,
-                  letterSpacing:
-                      .2 /*percentages not used in flutter. defaulting to zero*/,
-                  fontWeight: FontWeight.normal,
-                  height: 1.2),
+            Container(
+              margin: EdgeInsets.only(left: 20.0),
+              child: Text(
+                'Enter your phone \nnumber',
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                    color: Color.fromRGBO(255, 255, 255, 1),
+                    fontFamily: 'Gotham',
+                    fontSize: 30,
+                    letterSpacing:
+                        .2 /*percentages not used in flutter. defaulting to zero*/,
+                    fontWeight: FontWeight.normal,
+                    height: 1.2),
+              ),
             ),
             SizedBox(
               height: 40.0,
             ),
-            Row(
-              children: [
-                Image.asset(
-                  "assets/images/car2/flag.png",
-                  fit: BoxFit.cover,
-                ),
-                SizedBox(
-                  width: 5.0,
-                ),
-                Icon(
-                  Icons.arrow_drop_down_sharp,
-                  color: Color.fromRGBO(255, 255, 255, 1),
-                ),
-                SizedBox(
-                  width: 2.0,
-                ),
-                Text(
-                  '+91',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                      color: Color.fromRGBO(255, 255, 255, 1),
-                      fontFamily: 'Mulish',
-                      fontSize: 15,
-                      letterSpacing: 0,
-                      fontWeight: FontWeight.normal,
-                      height: 1),
-                ),
-                SizedBox(
-                  width: 10.0,
-                ),
-                Expanded(
-                  child: TextFormField(
-                      style: TextStyle(
+            Container(
+              margin: EdgeInsets.only(left: 20.0),
+              child: Row(
+                children: [
+                  Image.asset(
+                    "assets/images/car2/flag.png",
+                    fit: BoxFit.cover,
+                  ),
+                  SizedBox(
+                    width: 5.0,
+                  ),
+                  Icon(
+                    Icons.arrow_drop_down_sharp,
+                    color: Color.fromRGBO(255, 255, 255, 1),
+                  ),
+                  SizedBox(
+                    width: 2.0,
+                  ),
+                  Text(
+                    '+91',
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
                         color: Color.fromRGBO(255, 255, 255, 1),
-                      ),
-                      cursorColor: Color(0xffF5A623),
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: "Enter your phone number",
-                          hintStyle: TextStyle(
-                            color: Color.fromRGBO(255, 255, 255, 0.5),
-                          ))),
-                ),
-              ],
+                        fontFamily: 'Mulish',
+                        fontSize: 15,
+                        letterSpacing: 0,
+                        fontWeight: FontWeight.normal,
+                        height: 1),
+                  ),
+                  SizedBox(
+                    width: 10.0,
+                  ),
+                  Expanded(
+                    child: TextFormField(
+                        style: TextStyle(
+                          color: Color.fromRGBO(255, 255, 255, 1),
+                        ),
+                        cursorColor: Color(0xffF5A623),
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: "Enter your phone number",
+                            hintStyle: TextStyle(
+                              color: Color.fromRGBO(255, 255, 255, 0.5),
+                            ))),
+                  ),
+                ],
+              ),
             ),
             Container(
-                width: widget * .8,
+                width: width * .8,
+                margin: EdgeInsets.only(left: 20.0),
                 height: 3,
                 decoration: BoxDecoration(
                   color: Color.fromRGBO(255, 255, 255, 1),
                 )),
             SizedBox(
-              height: height * .2,
+              height: height * .1,
             ),
             Center(
               child: GestureDetector(
@@ -107,7 +117,7 @@ class _LoginState extends State<Login> {
                       MaterialPageRoute(builder: (_) => OTPVerification()));
                 },
                 child: Container(
-                    width: widget * .8,
+                    width: width * .8,
                     height: 50.0,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(25.0),
@@ -132,6 +142,7 @@ class _LoginState extends State<Login> {
               height: 30.0,
             ),
             Expanded(
+              flex: 2,
               child: MyKeyBoard(),
             )
           ],

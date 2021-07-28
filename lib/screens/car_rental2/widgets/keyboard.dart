@@ -9,6 +9,9 @@ class MyKeyBoard extends StatelessWidget {
       color: Color.fromRGBO(210, 213, 219, 0.8999999761581421),
       child: Column(
         children: [
+          SizedBox(
+            height: 10,
+          ),
           Expanded(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

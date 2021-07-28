@@ -4,8 +4,9 @@ import 'package:flutter_ui_kit/screens/home.dart';
 
 class MyAppBar extends StatelessWidget {
   final bool? isImage;
+  final bool? isBack;
 
-  const MyAppBar({Key? key, this.isImage}) : super(key: key);
+  const MyAppBar({Key? key, this.isImage, this.isBack}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +14,18 @@ class MyAppBar extends StatelessWidget {
         ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Image.asset(
-                "assets/images/car2/side_menu.png",
+              GestureDetector(
+                behavior: HitTestBehavior.translucent,
+                onTap: () {
+                  if (isBack!) {
+                    Navigator.of(context).pop();
+                  }
+                },
+                child: Image.asset(
+                  isBack!
+                      ? "assets/images/car2/icons_arrow.png"
+                      : "assets/images/car2/side_menu.png",
+                ),
               ),
               Image.asset(
                 "assets/images/car2/logo.png",

@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_kit/screens/car_rental2/widgets/app_bar.dart';
+import 'package:flutter_ui_kit/screens/car_rental2/details.dart';
 
 class RentalHome extends StatefulWidget {
   const RentalHome({Key? key}) : super(key: key);
@@ -12,10 +13,11 @@ class RentalHome extends StatefulWidget {
 
 final List<String> imgList = [
   'https://p1.pxfuel.com/preview/249/742/510/jaguar-sports-car-fast-automobile.jpg',
+  'https://stimg.cardekho.com/images/carexteriorimages/930x620/Maruti/Maruti-Wagon-R/6741/1564746908438/front-left-side-47.jpg',
   'https://upload.wikimedia.org/wikipedia/commons/1/16/Bugatti_Divo%2C_GIMS_2019%2C_Le_Grand-Saconnex_%28GIMS0029%29.jpg',
   'https://cdn.pixabay.com/photo/2021/03/04/14/39/cars-6068215_1280.jpg',
   'https://p1.pxfuel.com/preview/504/801/234/tesla-electric-car-vehicle-car-auto-model-x.jpg',
-  'https://upload.wikimedia.org/wikipedia/commons/8/89/Kia_Seltos_car_Htx_model.jpg'
+  'https://upload.wikimedia.org/wikipedia/commons/8/89/Kia_Seltos_car_Htx_model.jpg',
 ];
 
 class _RentalHomeState extends State<RentalHome> {
@@ -26,20 +28,20 @@ class _RentalHomeState extends State<RentalHome> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    var items = [
+    carsList = [
       {
         "name": "Maruti Swift",
         "price": "RS.5.14 - 8.89 Lakh",
         "image": imgList[0],
-        "rating": 4,
+        "rating": 4.0,
         "reviews": 25,
         "updates":
             "Maruti Swift Engine and Transmission: It is powered by the new 1.2-litre DualJet petrol engine (90PS/113Nm) introduced on the facelifted Dzire that comes with an idle start-stop feature for improved fuel efficiency. ... 1.2-litre MT- 23.20kmpl. 1.2-litre AMT- 23.76kmpl."
       },
       {
-        "name": "Maruti Wagnon R",
+        "name": "Maruti Wagon R",
         "price": "RS.4.34 - 7.92 Lakh",
-        "image": imgList[3],
+        "image": imgList[1],
         "rating": 3.5,
         "reviews": 18,
         "updates":
@@ -48,19 +50,18 @@ class _RentalHomeState extends State<RentalHome> {
       {
         "name": "Maruti Brezza",
         "price": "RS.6.61 - 13.52 Lakh",
-        "image": imgList[4],
+        "image": imgList[5],
         "rating": 4.5,
         "reviews": 42,
         "updates":
             "Latest Update: Maruti is offering discounts of up to Rs 39,000 on the Vitara Brezza this July. Maruti Vitara Brezza Price: The Vitara Brezza is priced between Rs 7.51 lakh and Rs 11.41 lakh (ex-showroom Delhi). Maruti Vitara Brezza Variants: It is sold in four trims: LXi, VXi, ZXi, and ZXi+."
       }
     ];
-    carsList?.addAll(items);
   }
 
   @override
   Widget build(BuildContext context) {
-    double widget = MediaQuery.of(context).size.width;
+    double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Column(
@@ -127,6 +128,7 @@ class _RentalHomeState extends State<RentalHome> {
                   right: 20.0,
                   child: MyAppBar(
                     isImage: true,
+                    isBack: false,
                   ),
                 ),
                 Positioned(
@@ -134,7 +136,7 @@ class _RentalHomeState extends State<RentalHome> {
                   left: 20.0,
                   right: 20.0,
                   child: Container(
-                    width: widget * .2,
+                    width: width * .2,
                     height: 50,
                     padding: EdgeInsets.symmetric(horizontal: 10.0),
                     decoration: BoxDecoration(
@@ -257,55 +259,116 @@ class _RentalHomeState extends State<RentalHome> {
             ),
           ),
           Expanded(
-            child: Container(
-              color: Color(0xffF6F6F6),
-              padding: EdgeInsets.only(left: 30.0, top: 20.0),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'The most searched cars',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                            color: Color.fromRGBO(0, 0, 0, 1),
-                            fontFamily: 'Gotham',
-                            fontSize: 18,
-                            letterSpacing: 0,
-                            fontWeight: FontWeight.w600,
-                            height: 1),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 10.0),
-                        child: Text(
-                          'See All',
-                          textAlign: TextAlign.right,
+            child: SingleChildScrollView(
+              child: Container(
+                color: Color(0xffF6F6F6),
+                padding: EdgeInsets.only(left: 30.0, top: 20.0),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'The most searched cars',
+                          textAlign: TextAlign.left,
                           style: TextStyle(
-                              color: Color.fromRGBO(245, 165, 35, 1),
+                              color: Color.fromRGBO(0, 0, 0, 1),
                               fontFamily: 'Gotham',
                               fontSize: 18,
                               letterSpacing: 0,
-                              fontWeight: FontWeight.normal,
+                              fontWeight: FontWeight.w600,
                               height: 1),
                         ),
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20.0,
-                  ),
-                  Container(
-                    height: 200,
-                    child: ListView.builder(
-                        itemCount: carsList?.length,
-                        itemBuilder: (_, index) {
-                          return Container(
-                            height: 10,
-                          );
-                        }),
-                  )
-                ],
+                        Padding(
+                          padding: const EdgeInsets.only(right: 10.0),
+                          child: Text(
+                            'See All',
+                            textAlign: TextAlign.right,
+                            style: TextStyle(
+                                color: Color.fromRGBO(245, 165, 35, 1),
+                                fontFamily: 'Gotham',
+                                fontSize: 18,
+                                letterSpacing: 0,
+                                fontWeight: FontWeight.normal,
+                                height: 1),
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 20.0,
+                    ),
+                    Container(
+                      height: 240,
+                      child: ListView.builder(
+                          itemCount: carsList?.length,
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (_, index) {
+                            return GestureDetector(
+                              behavior: HitTestBehavior.translucent,
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (_) =>
+                                        DetailsScreen(carsList![index])));
+                              },
+                              child: Container(
+                                margin: EdgeInsets.only(right: 10.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(15.0),
+                                      ),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(15.0),
+                                        child: CachedNetworkImage(
+                                          imageUrl: carsList![index]['image'],
+                                          height: 160,
+                                          width: width * .6,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Text(
+                                      carsList![index]['name'],
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          color: Color.fromRGBO(0, 0, 0, 1),
+                                          fontFamily: 'Gotham',
+                                          fontSize: 18,
+                                          letterSpacing: 0,
+                                          fontWeight: FontWeight.normal,
+                                          height: 1),
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Text(
+                                      carsList![index]['price'] + "*",
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          color: Color.fromRGBO(0, 0, 0, 1),
+                                          fontFamily: 'Gotham',
+                                          fontSize: 18,
+                                          letterSpacing: 0,
+                                          fontWeight: FontWeight.w600,
+                                          height: 1),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          }),
+                    )
+                  ],
+                ),
               ),
             ),
           )
