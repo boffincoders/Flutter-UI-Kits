@@ -1,0 +1,40 @@
+{
+  "status": [
+    {
+      "id": 112,
+      "name": "Helen",
+      "email": "hel@example.com",
+      "avatar": "assets/images/messenger/persons/helen.png"
+    },
+    {
+      "id": 113,
+      "name": "Jeannie",
+      "email": "jean@example.com",
+      "avatar": "assets/images/messenger/persons/jeannie.png"
+    },
+    {
+      "id": 115,
+      "name": "Robin",
+      "email": "robin@example.com",
+      "avatar": "assets/images/messenger/persons/robin.png"
+    },
+    {
+      "id": 114,
+      "name": "Lindsey",
+      "email": "dsey@example.com",
+      "avatar": "assets/images/messenger/persons/lindser.png"
+    },
+    {
+      "id": 117,
+      "name": "Kellan Lutz",
+      "email": "lutz@example.com",
+      "avatar": "assets/images/messenger/persons/kellan.png"
+    },
+    {
+      "id": 116,
+      "name": "Sophia Bush",
+      "email": "bush@example.com",
+      "avatar": "assets/images/messenger/persons/sophia.png"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "status": true,
+  "statusCode": 200,
+  "messagesList": [
+    {
+      "id": 1,
+      "message": "Hey Rahul, \u2028 You make some designs that I like the most",
+      "senderId": 118,
+      "receiverId": 111,
+      "dateTime": 1627537015
+    },
+    {
+      "id": 2,
+      "message": "I think its a good time \uD83D\uDE02",
+      "senderId": 111,
+      "receiverId": 118,
+      "dateTime": 1627538871
+    },
+    {
+      "id": 3,
+      "message": "Thank you brother.\u2028Im also like your good work.",
+      "senderId": 111,
+      "receiverId": 118,
+      "dateTime": 1627537855
+    },
+    {
+      "id": 4,
+      "message": "Than you too..\u2028But I need something..you can help me?",
+      "senderId": 118,
+      "receiverId": 111,
+      "dateTime": 1627538095
+    },
+    {
+      "id": 5,
+      "message": "Yeah, sure brother☺",
+      "senderId": 111,
+      "receiverId": 118,
+      "dateTime": 1627538155
+    },
+    {
+      "id": 6,
+      "message": "Thanks bro",
+      "senderId": 118,
+      "receiverId": 111,
+      "dateTime": 1627538515
+    },
+    {
+      "id": 6,
+      "message": "What is the good time for talk?",
+      "senderId": 118,
+      "receiverId": 111,
+      "dateTime": 1627538575
+    }
+  ]
+}

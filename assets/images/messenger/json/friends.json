@@ -1,0 +1,103 @@
+{
+  "friends_list": [
+    {
+      "id": 112,
+      "name": "Helen",
+      "email": "hel@example.com",
+      "avatar": "assets/images/messenger/persons/helen.png",
+      "lastMessage": "Hello Rahul",
+      "onlineStatus": 0,
+      "senderId": 112,
+      "receiverId": 111,
+      "lastMessageDateTime": 1626507655
+    },
+    {
+      "id": 113,
+      "name": "Jeannie",
+      "email": "jean@example.com",
+      "avatar": "assets/images/messenger/persons/jeannie.png",
+      "lastMessage": "Okay, Good Night \uD83D\uDE34",
+      "onlineStatus": 0,
+      "senderId": 113,
+      "receiverId": 111,
+      "lastMessageDateTime": 1627383415
+    },
+    {
+      "id": 115,
+      "name": "Robin",
+      "email": "robin@example.com",
+      "avatar": "assets/images/messenger/persons/robin.png",
+      "lastMessage": "Your welcome",
+      "onlineStatus": 1,
+      "senderId": 115,
+      "receiverId": 111,
+      "lastMessageDateTime": 1626802255
+    },
+    {
+      "id": 114,
+      "name": "Lindsey",
+      "email": "dsey@example.com",
+      "avatar": "assets/images/messenger/persons/lindser.png",
+      "lastMessage": "I am good Rahul",
+      "onlineStatus": 1,
+      "senderId": 114,
+      "receiverId": 111,
+      "lastMessageDateTime": 1627219135
+    },
+    {
+      "id": 117,
+      "name": "Kellan Lutz",
+      "email": "lutz@example.com",
+      "avatar": "assets/images/messenger/persons/kellan.png",
+      "lastMessage": "Yeap, I tried this last night.",
+      "onlineStatus": 0,
+      "senderId": 111,
+      "receiverId": 117,
+      "lastMessageDateTime": 1627507731
+    },
+    {
+      "id": 116,
+      "name": "Sophia Bush",
+      "email": "bush@example.com",
+      "avatar": "assets/images/messenger/persons/sophia.png",
+      "lastMessage": "See you in 1 year \uD83D\uDE44",
+      "onlineStatus": 1,
+      "senderId": 111,
+      "receiverId": 116,
+      "lastMessageDateTime": 1627380955
+    },
+    {
+      "id": 118,
+      "name": "James Lafferty",
+      "email": "james@example.com",
+      "avatar": "assets/images/messenger/persons/james.png",
+      "lastMessage": "I think its a good time \uD83D\uDE02",
+      "onlineStatus": 1,
+      "senderId": 111,
+      "receiverId": 118,
+      "lastMessageDateTime": 1627538871
+    },
+    {
+      "id": 120,
+      "name": "Wentworth Miller",
+      "email": "miller@example.com",
+      "avatar": "assets/images/messenger/persons/miller.png",
+      "lastMessage": "Oke, alright \uD83D\uDE03",
+      "onlineStatus": 1,
+      "senderId": 120,
+      "receiverId": 111,
+      "lastMessageDateTime": 1627531371
+    },
+    {
+      "id": 119,
+      "name": "Amanda Snyder",
+      "email": "snyder@example.com",
+      "avatar": "assets/images/messenger/persons/amanda.png",
+      "lastMessage": "Send me the file link \uD83D\uDE41.",
+      "onlineStatus": 1,
+      "senderId": 119,
+      "receiverId": 111,
+      "lastMessageDateTime": 1627476051
+    }
+  ]
+}

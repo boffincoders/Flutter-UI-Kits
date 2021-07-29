@@ -32,6 +32,9 @@ dependencies:
   percent_indicator: ^3.0.1
   cached_network_image: ^3.1.0
   flutter_rating_bar: ^4.0.0
+  get: ^4.3.0
+  intl: ^0.17.0
+  flutter_slidable: ^0.6.0
 
 dev_dependencies:
   flutter_test:
@@ -52,6 +55,9 @@ flutter:
   assets:
     - assets/images/
     - assets/images/car2/
+    - assets/images/messenger/
+    - assets/images/messenger/json/
+    - assets/images/messenger/persons/
    # - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
